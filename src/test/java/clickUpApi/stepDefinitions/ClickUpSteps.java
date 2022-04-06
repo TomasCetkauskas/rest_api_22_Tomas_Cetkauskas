@@ -65,15 +65,11 @@ public class ClickUpSteps {
 
 
     @Then("I remove task from a list")
-    public void removeTaskOnList(String name){
-        //JSONObject obj = new JSONObject();
-       // obj.put("name", null);
-        Response resp = removeTask();
-        List removedTask = resp.as(List.class);
-        //Assertions.assertThat(removedTask.getId())
-               // .as("We assert that the created folder id is correct")
-              //  .isEqualTo("");
-        //TestCaseContext.setTask(removeTask);
+    public void removeTaskOnList(){
+        JSONObject obj = new JSONObject();
+//        Response resp = removeTask();
+//        Task removedTask = resp.as(Task.class);
+//        TestCaseContext.setTask(removedTask);
 
 
     }

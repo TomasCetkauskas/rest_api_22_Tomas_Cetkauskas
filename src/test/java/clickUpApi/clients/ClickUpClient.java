@@ -59,6 +59,17 @@ public class ClickUpClient {
                 .when()
                 .delete("https://api.clickup.com/api/v2/task/" + TestCaseContext.getTask().getId())
                 .then().log().all()
+                .statusCode(204)
+                .extract().response();
+    }
+    public static Response CheckTaskDeleted (){
+        return RestAssured
+                .given().log().all()
+                .contentType(ContentType.JSON)
+                .header("Authorization", API_TOKEN)
+                .when()
+                .get("https://api.clickup.com/api/v2/task/" + TestCaseContext.getTask().getId())
+                .then().log().all()
                 .statusCode(200)
                 .extract().response();
     }
